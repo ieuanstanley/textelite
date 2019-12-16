@@ -29,6 +29,7 @@ www.ianbellelite.com
 /* Note that this program is "quick-hack" text parser-driven version
 of Elite with no combat or missions.
 */
+#define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -324,6 +325,7 @@ int tolower(char c)
 	return((int)c);
 }
 
+///=================got to here//////
 
 int stringbeg(char *s,char *t)
 /* Return nonzero iff string t begins with non-empty string s */
@@ -903,7 +905,8 @@ int gen_rnd_number (void)
 
 void goat_soup(const char *source,plansys * psy)
 {	for(;;)
-	{	int c=*(source++);
+	{	int a=*(source++);
+		unsigned char c = a;
 		if(c=='\0')	break;
 		if(c<0x80) printf("%c",c);
 		else
